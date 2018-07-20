@@ -15,97 +15,97 @@ class simple_slider
 	{
 		switch ($option) {
 			case 'simple_slider_1_title': return 'Slider 1 Title';
-			case 'simple_slider_1_image': return 'as-plugin/simple-slider/images/slider1.jpg';
+			case 'simple_slider_1_image': return 'as-media/slider1.jpg';
 			case 'simple_slider_1_description': return 'Slider 1 Description';
 			case 'simple_slider_2_title': return 'Slider 2 Title';
-			case 'simple_slider_2_image': return 'as-plugin/simple-slider/images/slider2.jpg';
+			case 'simple_slider_2_image': return 'as-media/slider2.jpg';
 			case 'simple_slider_2_description': return 'Slider 2 Description';
 			case 'simple_slider_3_title': return 'Slider 3 Title';
-			case 'simple_slider_3_image': return 'as-plugin/simple-slider/images/slider3.jpg';
+			case 'simple_slider_3_image': return 'as-media/slider3.jpg';
 			case 'simple_slider_3_description': return 'Slider 3 Description';
 		}
 	}
 	
 	function ss_get_option( $option )
 	{
-		return (strlen(qa_opt($option)) > 3) ? qa_opt($option) : $this->option_default($option);
+		return (strlen(as_opt($option)) > 3) ? as_opt($option) : $this->option_default($option);
 	}
 	
-	function admin_form(&$qa_content)
+	function admin_form(&$as_content)
 	{
 		$saved=false;
-		if (qa_clicked('save_button')) {
-			qa_opt('simple_slider_1_title', qa_post_text('simple_slider_1_title'));
-			qa_opt('simple_slider_1_image', qa_post_text('simple_slider_1_image'));
-			qa_opt('simple_slider_1_description', qa_post_text('simple_slider_1_description'));
-			qa_opt('simple_slider_2_title', qa_post_text('simple_slider_2_title'));
-			qa_opt('simple_slider_2_image', qa_post_text('simple_slider_2_image'));
-			qa_opt('simple_slider_2_description', qa_post_text('simple_slider_2_description'));
-			qa_opt('simple_slider_3_title', qa_post_text('simple_slider_3_title'));
-			qa_opt('simple_slider_3_image', qa_post_text('simple_slider_3_image'));
-			qa_opt('simple_slider_3_description', qa_post_text('simple_slider_3_description'));
+		if (as_clicked('save_button')) {
+			as_opt('simple_slider_1_title', as_post_text('simple_slider_1_title'));
+			as_opt('simple_slider_1_image', as_post_text('simple_slider_1_image'));
+			as_opt('simple_slider_1_description', as_post_text('simple_slider_1_description'));
+			as_opt('simple_slider_2_title', as_post_text('simple_slider_2_title'));
+			as_opt('simple_slider_2_image', as_post_text('simple_slider_2_image'));
+			as_opt('simple_slider_2_description', as_post_text('simple_slider_2_description'));
+			as_opt('simple_slider_3_title', as_post_text('simple_slider_3_title'));
+			as_opt('simple_slider_3_image', as_post_text('simple_slider_3_image'));
+			as_opt('simple_slider_3_description', as_post_text('simple_slider_3_description'));
 			$saved=true;
 		}
 		
 		return array(
-			'ok' => $saved ? qa_lang_html('ss_lang/settings_saved') : null,
+			'ok' => $saved ? as_lang_html('ss_lang/settings_saved') : null,
 			
 			'fields' => array(
 				array(
-					'label' => qa_lang_html('ss_lang/slider_1_title'),
+					'label' => as_lang_html('ss_lang/slider_1_title'),
 					'type' => 'text',
 					'style' => 'tall',
 					'value' => $this->ss_get_option('simple_slider_1_title'),
 					'tags' => 'NAME="simple_slider_1_title" ID="simple_slider_1_title"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_1_image'),
+					'label' => as_lang_html('ss_lang/slider_1_image'),
 					'type' => 'text',
 					'value' => $this->ss_get_option('simple_slider_1_image'),
 					'tags' => 'NAME="simple_slider_1_image" ID="simple_slider_1_image"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_1_description'),
+					'label' => as_lang_html('ss_lang/slider_1_description'),
 					'type' => 'textarea',
 					'rows' => 2,
 					'value' => $this->ss_get_option('simple_slider_1_description'),
 					'tags' => 'NAME="simple_slider_1_description" ID="simple_slider_1_description"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_2_title'),
+					'label' => as_lang_html('ss_lang/slider_2_title'),
 					'type' => 'text',
 					'style' => 'tall',
 					'value' => $this->ss_get_option('simple_slider_2_title'),
 					'tags' => 'NAME="simple_slider_2_title" ID="simple_slider_2_title"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_2_image'),
+					'label' => as_lang_html('ss_lang/slider_2_image'),
 					'type' => 'text',
 					'value' => $this->ss_get_option('simple_slider_2_image'),
 					'tags' => 'NAME="simple_slider_2_image" ID="simple_slider_2_image"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_2_description'),
+					'label' => as_lang_html('ss_lang/slider_2_description'),
 					'type' => 'textarea',
 					'rows' => 2,
 					'value' => $this->ss_get_option('simple_slider_2_description'),
 					'tags' => 'NAME="simple_slider_2_description" ID="simple_slider_2_description"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_3_title'),
+					'label' => as_lang_html('ss_lang/slider_3_title'),
 					'type' => 'text',
 					'style' => 'tall',
 					'value' => $this->ss_get_option('simple_slider_3_title'),
 					'tags' => 'NAME="simple_slider_3_title" ID="simple_slider_3_title"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_3_image'),
+					'label' => as_lang_html('ss_lang/slider_3_image'),
 					'type' => 'text',
 					'value' => $this->ss_get_option('simple_slider_3_image'),
 					'tags' => 'NAME="simple_slider_3_image" ID="simple_slider_3_image"',
 				),
 				array(
-					'label' => qa_lang_html('ss_lang/slider_3_description'),
+					'label' => as_lang_html('ss_lang/slider_3_description'),
 					'type' => 'textarea',
 					'rows' => 2,
 					'value' => $this->ss_get_option('simple_slider_3_description'),
@@ -115,7 +115,7 @@ class simple_slider
 			
 			'buttons' => array(
 				array(
-					'label' => qa_lang_html('admin/save_options_button'),
+					'label' => as_lang_html('admin/save_options_button'),
 					'tags' => 'name="save_button"',
 				),
 			),
@@ -156,7 +156,7 @@ class simple_slider
 		return ($region=='main');
 	}
 	
-	function output_widget($region, $place, $themeobject, $template, $request, $qa_content)
+	function output_widget($region, $place, $themeobject, $template, $request, $as_content)
 	{
 		$sliders = array( 
 			'slider_1' => array( 

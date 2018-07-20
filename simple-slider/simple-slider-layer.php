@@ -1,23 +1,23 @@
 <?php
 
-class qa_html_theme_layer extends qa_html_theme_base {
+class as_html_theme_layer extends as_html_theme_base {
 	var $plugin_url;
 	function __construct($template, $content, $rooturl, $request)
 	{
-		global $qa_layers;
-		$this->plugin_url = './' . $qa_layers['Simple Slider Layer']['urltoroot'];
-		qa_html_theme_base::qa_html_theme_base($template, $content, $rooturl, $request);
+		global $as_layers;
+		$this->plugin_url = './' . $as_layers['Simple Slider Layer']['urltoroot'];
+		as_html_theme_base::as_html_theme_base($template, $content, $rooturl, $request);
 	}
 	
 	function head_css() {
-		qa_html_theme_base::head_css();
+		as_html_theme_base::head_css();
 		$this->output('<link href="' . $this->plugin_url . 'simple-slider.css" type="text/css" rel="stylesheet" >');
 		
 	}
 	
 	function head_script()
 	{
-		qa_html_theme_base::head_script();
+		as_html_theme_base::head_script();
 		//$this->output('<script src="' . $this->plugin_url . 'simple-slider.js"></script>');
 		$this->output('<script src="' . $this->plugin_url . 'js/jquery-1.6.3.min.js" type="text/javascript"></script>');
 		$this->output('<script src="' . $this->plugin_url . 'js/cufon-yui.js" type="text/javascript"></script>');
