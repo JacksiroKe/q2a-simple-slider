@@ -3,7 +3,7 @@
 /*
 	Plugin Name: Simple Slider
 	Plugin URI: https://github.com/Jacksiro/Q2A-Simple-Slider-Plugin
-	Plugin Description: A simple 3 image slider with titles, description and links for each slide to spice up your Q2A homepage or whatever page you choose
+	Plugin Description: A simple image slider for the tops of pages, showing titles, descriptions and links.
 	Plugin Version: 1.1
 	Plugin Date: 2017-05-10
 	Plugin Author: Jackson Siro
